@@ -68,6 +68,11 @@ docker-amd64:
 	docker build -t docker.io/snowzach/doods:amd64 -f Dockerfile.amd64 .
 	docker push docker.io/snowzach/doods:amd64
 
+.PHONY: docker-cuda
+docker-cuda:
+	docker build -t docker.io/snowzach/doods:cuda -f Dockerfile.cuda .
+	docker push docker.io/snowzach/doods:cuda
+
 .PHONY: docker-arm32
 docker-arm32:
 	docker build -t docker.io/snowzach/doods:arm32 -f Dockerfile.arm32 .

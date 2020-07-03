@@ -188,7 +188,10 @@ There are several published Docker images that you can use
 ## CUDA Support
 There is now NVidia GPU support with an docker image tagged cuda, to run:
 `docker run -it --gpus all -p 8080:8080 snowzach/doods:cuda`
-For whatever reason, it can take a good 60-80 seconds before the model finishes loading.
+
+NOTE: Depending on your GPU it can take a long time to start DOODs as it may need to compile some of the CUDA binaries
+You can eliminate this start time by mapping `/root/.nv` inside the contains to your filesystem somewhere so it can
+maintain the compiled cache for the GPU Cuda drivers.
 
 ## Compiling
 You can compile it yourself using the plain `Dockerfile` which should pick the optimal CPU flags for your architecture. 
